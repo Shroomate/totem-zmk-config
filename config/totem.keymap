@@ -49,6 +49,22 @@
 
     combos { compatible = "zmk,combos"; };
 
+    macros {
+        screenshot: screenshot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(PRINTSCREEN)>;
+            label = "SCREENSHOT";
+        };
+
+        recordgif: recordgif {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(B)>;
+            label = "RECORDGIF";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
