@@ -50,18 +50,18 @@
     combos { compatible = "zmk,combos"; };
 
     macros {
-        screenshot: screenshot {
+        tickres: tickres {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(PRINTSCREEN)>;
-            label = "SCREENSHOT";
+            bindings = <&none &kp LS(T) &kp I &kp C &kp K &kp E &kp T &kp SPACE &kp LS(R) &kp E &kp S &kp O &kp L &kp U &kp T &kp I &kp O &kp N &kp RET &kp MINUS>;
+            label = "TICKRES";
         };
 
-        recordgif: recordgif {
+        admincmd: admincmd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(B)>;
-            label = "RECORDGIF";
+            bindings = <&none &kp LG(R) &kp C &kp M &kp D &kp LS(ENTER)>;
+            label = "ADMINCMD";
         };
     };
 
@@ -101,10 +101,10 @@
         Fun {
             display-name = "Fun";
             bindings = <
-        &bootloader  &trans  &trans  &trans  &to 4     &trans  &trans  &trans  &kp END  &kp F1
-        &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &kp F10
-&trans  &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &kp F20  &kp F7
-                             &trans  &trans  &trans    &trans  &trans  &trans
+        &bootloader  &trans  &to 4   &trans     &tickres               &trans     &trans  &trans  &kp END  &kp F1
+        &trans       &trans  &trans  &trans     &trans                 &admincmd  &trans  &trans  &trans   &kp F10
+&trans  &trans       &trans  &trans  &trans     &trans                 &trans     &trans  &trans  &trans   &kp F20  &kp F7
+                             &trans  &kp LA(B)  &kp LC(PRINTSCREEN)    &trans     &trans  &trans
             >;
         };
 
