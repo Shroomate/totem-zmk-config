@@ -60,7 +60,7 @@
         admincmd: admincmd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp LG(R) &kp C &kp M &kp D &kp LS(ENTER)>;
+            bindings = <&none &kp LG(R) &kp C &kp M &kp D &kp LS(LC(ENTER))>;
             label = "ADMINCMD";
         };
     };
