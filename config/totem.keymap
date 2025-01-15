@@ -63,6 +63,13 @@
             bindings = <&none &kp LG(R) &kp C &kp M &kp D &kp LS(LC(ENTER))>;
             label = "ADMINCMD";
         };
+
+        ping: ping {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LG(R) &kp C &kp M &kp D &kp ENTER &kp P &kp I &kp N &kp G &kp SPACE &kp LC(V) &kp SPACE &kp MINUS &kp T>;
+            label = "PING";
+        };
     };
 
     keymap {
