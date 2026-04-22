@@ -3,7 +3,7 @@
 //                                                        ▄▀▀▀▄  ▄  ▄▀▀▀▄  ▄  ▄▀▀▀▄  █  ▄▀▀▀▄
 //                                                        █   █  █  █   █  █  █   █  █  █   █
 //                                                         ▀▀▀   █   ▀▀▀   █   ▀▀▀   ▀   ▀▀▀
-//                                                               █      ▄▄▄█▄▄▄    █   █  
+//                                                               █      ▄▄▄█▄▄▄    █   █
 //                                                               ▀      █  █  █     █▄█
 //                                                             ▀▀▀▀▀    █  █  █      ▀
 //                                                                      ▀  ▀  ▀
@@ -22,7 +22,7 @@
 
 &mt {
     quick-tap-ms = <100>;
-    global-quick-tap;
+    require-prior-idle-ms = <100>;
     flavor = "tap-preferred";
     tapping-term-ms = <170>;
 };
@@ -37,12 +37,11 @@
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;
-            global-quick-tap;
+            require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
         };
     };
@@ -54,21 +53,18 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&none &kp LG(R) &kp C &kp M &kp D &kp LS(LC(ENTER))>;
-            label = "ADMINCMD";
         };
 
         ping: ping {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&none &kp LG(R) &kp C &kp M &kp D &kp ENTER &kp P &kp I &kp N &kp G &kp SPACE &kp LC(V) &kp SPACE &kp MINUS &kp T>;
-            label = "PING";
         };
 
         printershell: shell {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(R) &kp S &kp H &kp E &kp L &kp L &kp COLON &kp COLON &kp COLON &kp LBRC &kp LS(A) &kp N8 &kp LS(A) &kp N9 &kp N1 &kp LS(A) &kp N6 &kp N6 &kp MINUS &kp N3 &kp LS(A) &kp N7 &kp LS(D) &kp MINUS &kp N4 &kp N4 &kp N2 &kp N4 &kp MINUS &kp N8 &kp LS(D) &kp N2 &kp N4 &kp MINUS &kp N0 &kp N4 &kp LS(E) &kp N1 &kp N8 &kp N0 &kp N6 &kp N9 &kp N5 &kp LS(C) &kp N7 &kp LS(A) &kp RBRC>;
-            label = "SHELL";
         };
     };
 
