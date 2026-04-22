@@ -60,6 +60,13 @@
             #binding-cells = <0>;
             bindings = <&none &kp LG(R) &kp C &kp M &kp D &kp ENTER &kp P &kp I &kp N &kp G &kp SPACE &kp LC(V) &kp SPACE &kp MINUS &kp T>;
         };
+
+        printershell: shell {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(R) &kp S &kp H &kp E &kp L &kp L &kp COLON &kp COLON &kp COLON &kp LBRC &kp LS(A) &kp N8 &kp LS(A) &kp N9 &kp N1 &kp LS(A) &kp N6 &kp N6 &kp MINUS &kp N3 &kp LS(A) &kp N7 &kp LS(D) &kp MINUS &kp N4 &kp N4 &kp N2 &kp N4 &kp MINUS &kp N8 &kp LS(D) &kp N2 &kp N4 &kp MINUS &kp N0 &kp N4 &kp LS(E) &kp N1 &kp N8 &kp N0 &kp N6 &kp N9 &kp N5 &kp LS(C) &kp N7 &kp LS(A) &kp RBRC>;
+            label = "SHELL";
+        };
     };
 
     keymap {
@@ -98,10 +105,10 @@
         Fun {
             display-name = "Fun";
             bindings = <
-        &bootloader  &trans  &to 4   &trans     &trans                 &kp LC(LS(ESC))  &trans  &trans  &kp END  &kp F1
-        &kp LG(A)    &trans  &trans  &trans     &trans                 &admincmd        &trans  &trans  &trans   &kp F10
-&trans  &trans       &trans  &trans  &trans     &trans                 &trans           &trans  &trans  &trans   &kp F20  &kp F7
-                             &trans  &kp LA(B)  &kp LC(PRINTSCREEN)    &trans           &trans  &trans
+        &bootloader            &trans  &to 4   &trans     &printershell          &kp LC(LS(ESC))  &trans  &trans  &kp END  &kp F1
+        &kp LS(LA(LC(LG(A))))  &trans  &trans  &trans     &trans                 &admincmd        &trans  &trans  &trans   &kp F10
+&trans  &trans                 &trans  &trans  &trans     &trans                 &trans           &trans  &trans  &trans   &kp F20  &kp F7
+                                       &trans  &kp LA(B)  &kp LC(PRINTSCREEN)    &trans           &trans  &trans
             >;
         };
 
