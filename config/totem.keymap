@@ -22,7 +22,7 @@
 
 &mt {
     quick-tap-ms = <100>;
-    global-quick-tap;
+    require-prior-idle-ms = <100>;
     flavor = "tap-preferred";
     tapping-term-ms = <170>;
 };
@@ -37,12 +37,11 @@
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;
-            global-quick-tap;
+            require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
         };
     };
@@ -54,14 +53,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&none &kp LG(R) &kp C &kp M &kp D &kp LS(LC(ENTER))>;
-            label = "ADMINCMD";
         };
 
         ping: ping {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&none &kp LG(R) &kp C &kp M &kp D &kp ENTER &kp P &kp I &kp N &kp G &kp SPACE &kp LC(V) &kp SPACE &kp MINUS &kp T>;
-            label = "PING";
         };
     };
 
@@ -101,7 +98,7 @@
         Fun {
             display-name = "Fun";
             bindings = <
-        &bootloader  &trans  &to 4   &trans     &tickres               &kp LC(LS(ESC))  &trans  &trans  &kp END  &kp F1
+        &bootloader  &trans  &to 4   &trans     &trans                 &kp LC(LS(ESC))  &trans  &trans  &kp END  &kp F1
         &kp LG(A)    &trans  &trans  &trans     &trans                 &admincmd        &trans  &trans  &trans   &kp F10
 &trans  &trans       &trans  &trans  &trans     &trans                 &trans           &trans  &trans  &trans   &kp F20  &kp F7
                              &trans  &kp LA(B)  &kp LC(PRINTSCREEN)    &trans           &trans  &trans
